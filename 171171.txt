@@ -1,0 +1,131 @@
+$ git init -> иницијализација на фолдерот SI_2023_lab1_171171
+Initialized empty Git repository in C:/Users/Evgenija/Desktop/SI_2023_lab1_171171/.git/
+
+$ git remote add origin https://github.com/Evgenija998/SI_2023_lab1_171171 -> поврзување на мојот локален фолдер (репозиториум) со репозиториумот на github
+$ git remote -v -> проверка за потврдување дека оддалечениот репозиториум е додаден
+origin  https://github.com/Evgenija998/SI_2023_lab1_171171 (fetch)
+origin  https://github.com/Evgenija998/SI_2023_lab1_171171 (push)
+
+$ mv README.md.txt README.md -> преименување на името на фајлот поради двојна екстензија
+$ git add README.md -> додавање на промените на Git за следниот commit
+$ git commit -m "Initial commit" -> комитнување на последните промени
+[master (root-commit) 4491947] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git add SILab1.java -> додавање на проените на Git за следниот commit
+$ git commit -m "Add java class" -> комитнување на последните промени, оносно java фајлот
+[master 66d9b96] Add java class
+ 1 file changed, 41 insertions(+)
+ create mode 100644 SILab1.java
+
+$ git push --all -> синхронизација на сите гранки
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 836 bytes | 418.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+ * [new branch]      master -> master
+
+$ git branch bug1 -> креирање на нова гранка bug1
+$ git branch bug2 -> креирање на нова гранка bug2
+$ git branch bug3 -> креирање на нова гранка bug3
+
+$ git checkout bug1 -> префрлање на гранката bug1
+$ git add SILab1.java -> додавање на промените на Git за следниот commit
+$ git commit -m "Fix wrong loop for reading" -> комитување на последните промени по решавање на грешка А во кодот
+[bug1 5bbd902] Fix wrong loop for reading
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git checkout bug2 -> префрлање на гранката bug2
+$ git add SILab1.java -> додавање на промените на Git за следниот commit
+$ git commit -m "Fix wrong condition in filterOddNumbers" -> комитување на последните промени по решавање на грешка B во кодот
+[bug2 3476a69] Fix wrong condition in filterOddNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git checkout bug3 -> префрлање на гранката bug3
+$ git add SILab1.java -> додавање на промените на Git за следниот commit
+$ git commit -m " Fix method sumEvenNumbers" -> комитување на последните промени по решавање на грешка C во кодот
+[bug3 f7773c0]  Fix method sumEvenNumbers
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+$ git push --all -> синхронизација на сите гранки со оддалечениот репозиториум
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 830 bytes | 415.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+ * [new branch]      bug1 -> bug1
+ * [new branch]      bug2 -> bug2
+ * [new branch]      bug3 -> bug3
+
+
+$ git checkout master -> префрлање на гранката master
+
+$ git merge bug1 -> спојување на гранката bug1 со master
+Updating 66d9b96..5bbd902
+Fast-forward
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+- Не се случи конфликт при извршување на наредбата.
+
+$ git push --all -> синхронизација на сите гранки со оддалечениот репозиториум
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+   66d9b96..5bbd902  master -> master
+
+$ git merge bug2 -> спојување на гранката bug2 со master
+Auto-merging SILab1.java
+Merge made by the 'ort' strategy.
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+- При спојувањето на гранката bug2 со master, автоматски Git отвори текст уредувач за внесување на порака за commit. Со ажурирање на пораката продолжи спојувањето на гранките.
+
+$ git push --all -> синхронизација на сите гранки со оддалечениот репозиториум
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 179.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+   5bbd902..11c0aed  master -> master
+
+
+$ git checkout bug3 -> префрлање на гранката bug3
+
+
+$ git rebase master -> правење rebase на гранката bug3 кон master
+Successfully rebased and updated refs/heads/bug3.
+
+$ git checkout master -> префрлање на гранката master
+
+$ git merge bug3 -> спојување на гранката bug3 со master
+
+$ git push --all -> синхронизација на сите гранки со оддалечениот репозиториум
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 226 bytes | 226.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+   f7773c0..163ef6d  bug3 -> bug3
+   06cd494..163ef6d  master -> master
+
+
+$ touch logs.txt -> креирање на датотека logs.txt
+$ vim logs.txt -> отварање на фајлот logs.txt
+$ touch SI_2023_lab1_171171.txt -> креирање на нов фајл
+
+
+
+
+
+
