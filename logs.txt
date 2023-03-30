@@ -122,6 +122,20 @@ $ touch logs.txt
 $ vim logs.txt
 
 
+$ git commit -m "Final commit"
+[master 5c35072] Final commit
+ 2 files changed, 258 insertions(+)
+ create mode 100644 171171.txt
+ create mode 100644 logs.txt
 
+$ git push --all
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.88 KiB | 982.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Evgenija998/SI_2023_lab1_171171
+   163ef6d..5c35072  master -> master
 
 

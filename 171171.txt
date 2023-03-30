@@ -123,13 +123,13 @@ To https://github.com/Evgenija998/SI_2023_lab1_171171
 $ touch logs.txt -> креирање на датотека logs.txt
 $ vim logs.txt -> отварање на фајлот logs.txt
 
-$ git commit -m "Final commit"
+$ git commit -m "Final commit" -> последен commit со порака Final commit
 [master 5c35072] Final commit
  2 files changed, 258 insertions(+)
  create mode 100644 171171.txt
  create mode 100644 logs.txt
 
-$ git push --all
+$ git push --all -> синхронизација на сите гранки со оддалечениот репозиториум
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Delta compression using up to 4 threads
